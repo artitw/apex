@@ -260,9 +260,15 @@ if "--fast_multihead_attn" in sys.argv:
                                                       '--expt-extended-lambda',
                                                       '--use_fast_math'] + version_dependent_macros}))
 
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
 setup(
-    name='apex',
+    name='pytorch-extension',
     version='0.1',
+    author="Artit Wangperawong",
+    author_email="artitw@gmail.com",
     packages=find_packages(exclude=('build',
                                     'csrc',
                                     'include',
@@ -272,7 +278,11 @@ setup(
                                     'tests',
                                     'examples',
                                     'apex.egg-info',)),
-    description='PyTorch Extensions written by NVIDIA',
+    description='Package for A PyTorch Extension by NVIDIA',
+    keywords='artificial intelligence pytorch data science deep machine learning',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/artitw/apex",
     ext_modules=ext_modules,
     cmdclass=cmdclass,
     extras_require=extras,
